@@ -1,0 +1,13 @@
+Fonts used in this design:
+
+Font: Abril Fatface
+Author: TypeTogether
+Url: http://www.fontsquirrel.com/fonts/abril-fatface
+
+Font: Stardos Stencil
+Author: Vernon Adams
+Url: http://www.fontsquirrel.com/fonts/stardos-stencil
+
+Font: Bebas Neue
+Author: Fontfabric
+Url: http://www.fontsquirrel.com/fonts/bebas-neue

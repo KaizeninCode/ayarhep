@@ -1,0 +1,943 @@
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+body {
+    background-color: white;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 120px;
+    background: #11141a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100 ;
+}
+header {
+  
+   
+    transition: background-color 0.3s ease; 
+}
+
+header:hover {
+    background-color: #cd0101;
+}
+.logo{
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.logo {
+    max-width: 67px; /* Set the maximum width of the logo */
+    height: auto; /* Allow the height to adjust proportionally */
+}
+.logo {
+    max-width: 67px; /* Set the maximum width of the logo */
+    height: auto; /* Allow the height to adjust proportionally */
+    opacity: 1; /* Initially visible */
+    transition: opacity 0.5s ease-in-out; /* Apply transition effect */
+    /* Other styling properties for the logo */
+}
+
+.hidden {
+    opacity: 0; /* Make logo invisible when hidden */
+}
+nav a{
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+
+nav a:hover,
+nav a.active
+ {
+    color:#0b6de3;
+}
+
+section{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1f242d;
+    font-size: 100px;
+    color: #fff;
+    font-weight: 700;
+}
+.container{
+    width: 28vmin;
+    height: 28vm;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em 0;
+    position: relative;
+    font-size: 16px;
+    border-radius: 0.5em;
+    background-color: #cd0101;
+    border-bottom: 10px solid #0b6de3;
+}
+i{
+    color: #18698f;
+    font-size: 2.5em;
+    text-align: center;
+}
+span.num{
+    color: #ffffff;
+    display: grid;
+    place-items: center;
+    font-weight: 600;
+    font-size: 3em;
+}
+span.text{
+    color: #e0e0e0 ;
+    font-size: 1em;
+    text-align: center;
+    pad: 0.7em 0;
+    font-weight: 400;
+    line-height: 0;
+}
+section:nth-child(odd) {
+    background: #323946;
+
+}
+
+/* Styling for main menu */
+#sidemenu {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+}
+
+#sidemenu li {
+    display: inline-block; /* Display menu items horizontally */
+    margin-right: 20px; /* Add some spacing between menu items */
+}
+
+#sidemenu li:last-child {
+    margin-right: 0; /* Remove margin from the last menu item */
+}
+
+#sidemenu li a {
+    text-decoration: none;
+    color: rgb(244, 242, 242); /* Text color of menu items */
+    font-size: 16px;
+}
+
+#sidemenu li a:hover {
+    color: royalblue; /* Text color of menu items on hover */
+}
+
+/* Styling for dropdown menus */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(65, 105, 225, 0.972); /* Background color of submenu */
+    min-width: 160px; /* Set a minimum width for the submenu */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Add shadow for a better look */
+    z-index: 1; /* Ensure the submenu appears above other elements */
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px; /* Add padding to submenu items */
+    color: white; /* Text color of submenu items */
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(236, 8, 8); /* Background color of submenu items on hover */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Display the submenu when the parent is hovered */
+}
+
+/* Styling for the menu and submenu items */
+#sidemenu li a {
+    text-decoration: none;
+    color: rgb(238, 238, 238); /* Text color of menu items */
+    font-size: 12px;
+    display: flex;
+    align-items: center; /* Align text and icon vertically */
+}
+
+#sidemenu li a:hover {
+    color: royalblue; /* Text color of menu items on hover */
+}
+
+/* Styling for the icons */
+#sidemenu li a i {
+    margin-right: 5px; /* Add spacing between icon and text */
+    font-size: 8px; /* Adjust the size of the icons */
+}
+#home{
+    background-image: url(background.png.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide {
+    width: 100%;
+    height: 100vh; /* Adjust as needed */
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.active {
+    display: block;
+}
+
+#slide1 {
+    background-image: url('background.png.jpg');
+    background-size: cover;
+    background-position: center;
+    /* Additional styling for Slide 1 */
+}
+
+#slide2 {
+    background-image: url('backgroundone.JPG');
+    background-size: cover;
+    background-position: center;
+    /* Additional styling for Slide 2 */
+}
+
+#slide3 {
+    background-image: url('backgroundtwo.JPG');
+    background-size: cover;
+    background-position: center;
+    /* Additional styling for Slide 3 */
+}
+@keyframes spin-disappear {
+    0% { transform: rotate(0deg); opacity: 1; }
+    50% { transform: rotate(360deg); opacity: 0; }
+    100% { transform: rotate(720deg); opacity: 1; }
+}
+
+.logo {
+    animation: spin-disappear 3s ease-in-out infinite;
+}
+/* about*/
+section .about{
+    background: white;
+    
+}
+#about{
+    padding: 80px 0;
+    color: #000000;
+    
+
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.aboutcol1{
+    flex-basis: 35%;
+}
+.aboutcol1 img{
+    width: 100%;
+    border-radius: 15px;
+}
+.aboutcol2{
+    flex-basis: 60%;
+}
+.subtitle{
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+.tabtitles{
+    display: flex;
+    margin: 20px 0 40px ;
+}
+.tablinks{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative ;
+}
+.tablinks::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+.tablinks.active-link::after{
+    width: 50%;
+}
+.tabcontents ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+.tabcontents ul li span{
+    color: #ff004f;
+    font-size: 11px ;
+}
+.tabcontents{
+    display: none;
+
+}
+.tabcontents.active-tab{
+    display: block ;
+}
+.aboutcol2 p{
+    font-size: 10px;
+}
+#mission ul li{
+font-size: 10px;
+}
+#vission ul li{
+    font-size: 10px;
+}
+#goal ul li{
+    font-size: 10px;
+}
+#values ul li{
+    font-size: 10px;
+}
+/* meet the team */
+#focus-area {
+    padding: 30px 0;
+}
+
+.sub-title {
+    font-size: 20px; /* Adjusted font size */
+}
+
+.servicelist {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px; /* Added gap between grid items */
+    margin-top: 50px;
+}
+
+.servicelist div {
+    background: #000000;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
+}
+
+.servicelist div i {
+    font-size: 50px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.servicelist div h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.servicelist div a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px; /* Adjusted font size */
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.servicelist div:hover {
+    background: #ff004f;
+    transform: translateX(-10px); /* Corrected typo in translation */
+}
+#focus-area {
+    padding: 30px 0;
+}
+
+.contaiiiner {
+    display: flex; /* Changed to flexbox */
+    flex-direction: column; /* Added to align items vertically */
+    align-items: center; /* Added to center items horizontally */
+}
+
+.sub-title {
+    font-size: 20px; /* Adjusted font size */
+}
+
+.servicelist {
+    display: flex; /* Changed to flexbox */
+    flex-wrap: wrap; /* Added to allow items to wrap */
+    gap: 20px; /* Added gap between items */
+    justify-content: center; /* Added to center items horizontally */
+    margin-top: 50px;
+}
+
+.servicelist div {
+    background: #000000;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
+    text-align: center; /* Added to center text */
+}
+
+.servicelist div i {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.servicelist div h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.servicelist div a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px; /* Adjusted font size */
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.servicelist div:hover {
+    background: #ff004f;
+    transform: translateX(-10px);
+}
+
+/* news */
+#programmes{
+   
+    justify-content: space-between;
+   
+}
+h1 .wsub-title{
+    font-size: 20px;
+}
+.pcontainer{
+    display: grid;
+    left: 0;
+    grid-template-columns: repeat(auto);
+}
+.work-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid: 40px;
+    margin-top: 50px;
+}
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.work img{
+    width: 95%;
+    border-radius: 5px;
+    display: flexbox;
+    left: 0;
+    align-items: flex-end;
+    transition:transform 0.5s ;
+}
+.layer{
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(rgba(0,0,0,0.6), #ff004f);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.layer a{
+    margin-top: 20px;
+    color: #ff004f;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius:50%;
+    text-align: center;
+}
+.work:hover img{
+    transform: scale(1.1);
+}
+.work:hover .layer{
+    height: 100%;
+}
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #ff004f;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    
+    transition: background 0.5s;
+} 
+.btn{
+    background: #ff004f;
+    
+  
+}
+
+.btn a{
+    text-decoration: none;
+    font-size: 20px;
+    
+    
+}
+.btn a:hover{
+    background-color: #ff004f;
+    transition: 0.5s;
+    transform: translateY(-5px);
+
+}
+#programmes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wsub-title {
+    font-size: 16px; /* Reduce the font size */
+}
+
+.pcontainer {
+    display: flex; /* Changed to flexbox */
+    flex-direction: column; /* Added to align items vertically */
+}
+
+.work-list {
+    display: flex; /* Changed to flexbox */
+    flex-wrap: wrap; /* Added to allow items to wrap */
+    gap: 20px; /* Added to create space between items */
+    margin-top: 30px; /* Adjusted margin top */
+}
+
+.work {
+    width: 250px; /* Set a fixed width for each work item */
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px; /* Added margin bottom to create space between items */
+}
+
+.work img {
+    width: 100%;
+    border-radius: 5px;
+    transition: transform 0.5s;
+}
+
+.layer {
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px; /* Reduce the font size */
+    transition: height 0.5s;
+}
+
+.layer h3 {
+    font-weight: 500;
+    margin-bottom: 10px; /* Adjusted margin */
+}
+
+.layer p {
+    margin-bottom: 10px; /* Adjusted margin */
+}
+
+.layer a {
+    margin-top: 10px; /* Adjusted margin */
+    font-size: 14px; /* Reduce the font size */
+    line-height: initial; /* Reset line-height */
+    width: 40px; /* Adjusted width */
+    height: 40px; /* Adjusted height */
+    border-radius: 50%;
+    line-height: 40px;
+}
+
+.btn {
+    font-size: 14px; /* Reduce the font size */
+    padding: 10px 20px; /* Adjusted padding */
+    width: fit-content; /* Adjusted width */
+    text-decoration: none; /* Added to remove underline */
+    color: #fff; /* Added to ensure text color remains white */
+    border: 1px solid #ff004f; /* Added to maintain button border */
+    border-radius: 6px; /* Added to maintain button border radius */
+    transition: background 0.5s; /* Added to transition background color */
+}
+
+.btn:hover {
+    background-color: #ff004f; /* Added background color change on hover */
+    transform: translateY(-3px);
+}
+#news {
+    background-color: black;
+    color: white;
+}
+
+/* footer */
+footer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 100px;
+    background: #0b6de3;
+    overflow: hidden; /* Ensure the overflow is hidden to contain the waves */
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(0) rotate(0deg);
+    }
+    50% {
+        transform: translateX(-25%) rotate(-5deg); /* Adjust the wave's movement */
+    }
+    100% {
+        transform: translateX(0) rotate(0deg);
+    }
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px; /* Adjust the height of the wave */
+    background: linear-gradient(to right, transparent 50%, #fff 50%);
+    background-size: 50px 100%; /* Adjust the size of the wave */
+    animation: wave 2s infinite; /* Adjust the speed of the wave */
+}
+.about,
+#focus-area,
+#programmes {
+    background: #fff;
+    color: #000;
+}
+section {
+    background: #fff;
+    color: #000;
+}
+#focus-area {
+    background: #fff;
+    color: #000;
+}
+
+/* Existing CSS styles remain unchanged */
+
+footer .contaiiner {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+footer .contaiiner .sec h2 {
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+footer .contaiiner .sec h2::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #d70606;
+}
+
+footer .contaiiner .sec p {
+    color: #fff;
+}
+
+.sci {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    grid-gap: 10px;
+}
+
+.sci li {
+    list-style: none;
+}
+
+.sci li a {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background: #3e56cb;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.sci li a:hover {
+    background: #cd0101;
+}
+
+.sci li a .fa {
+    color: #fff;
+    font-size: 20px;
+}
+
+.quicklinks {
+    position: relative;
+}
+
+.quicklinks li a {
+    list-style: none;
+}
+
+.quicklinks li a {
+    color: #f7f7f7;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.quicklinks li a:hover {
+    color: #cd0101;
+}
+
+.info {
+    position: relative;
+}
+
+.info li {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    margin-bottom: 16px;
+}
+
+.info li span:nth-child(1) {
+    color: #fff;
+    font-size: 20px;
+}
+
+.info li span {
+    color: #fff;
+}
+
+.info a {
+    color: #f7f7f7;
+    text-decoration: none;
+}
+
+.quicklinks li a:hover {
+    color: #e60808;
+}
+
+@media (max-width: 991px) {
+    footer {
+        padding: 40px;
+    }
+    footer .contaiiner {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    footer .contaiiner {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+/* Define the wavy animation */
+@keyframes wave {
+    0% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Apply the wavy animation to the footer pseudo-element */
+footer::before {
+    content: "";
+    position: absolute;
+    top: -10px; /* Adjust the positioning to be above the footer border */
+    left: 0;
+    width: 100%;
+    height: 20px; /* Adjust the wave height */
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+    animation: wave 2s infinite; /* Adjust the speed of the wave */
+    z-index: 1; /* Ensure the wave is above other content */
+}
+
+/* Rest of your existing CSS styles remain unchanged */
+footer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 100px;
+    background: #0b6de3;
+    overflow: hidden;
+}
+
+/* Container styles... */
+
+/* footer{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 100x;
+    background: #0b6de3;
+}
+footer .contaiiner{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+footer .contaiiner .sec h2{
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+footer .contaiiner .sec h2::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #d70606;
+}
+footer .contaiiner .sec p{
+    color: #fff;
+}
+.sci{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    grid-gap: 10px;
+}
+.sci li{
+    list-style: none;
+} 
+.sci li a{
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background: #3e56cb;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.sci li a:hover{
+    background: #cd0101;
+}
+.sci li a .fa{
+    color: #fff;
+    font-size: 20px;
+}
+.quicklinks{
+    position: relative;
+}
+.quicklinks li a{
+    list-style: none;
+}
+.quicklinks li a {
+    color: #f7f7f7;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.quicklinks li a:hover{
+    color: #cd0101;
+}
+.info{
+    position: relative;
+}
+.info li{
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    margin-bottom: 16px;
+}
+.info li span:nth-child(1){
+    color: #fff;
+    font-size: 20px;
+}
+.info li span{
+    color: #fff;
+}
+.info a{
+    color: #f7f7f7;
+    text-decoration: none;
+}
+.quicklinks li a:hover{
+    color: #e60808;
+}
+
+@media (max-width: 991px){
+    footer{
+        padding: 40px;
+    }
+    footer .contaiiner{
+       
+        grid-template-columns: repeat(2,1fr);
+       
+    }
+}
+@media (max-width: 768px){
+    footer .contaiiner{
+        grid-template-columns: repeat(1,1fr);
+    }
+} */
