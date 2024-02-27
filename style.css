@@ -6,7 +6,11 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 body {
-    background-color: white;
+    background-color: red;
+    /* background-image: url(./about.jpg);
+    background-repeat: no-repeat;
+    background-position: center; */
+
 }
 header{
     position: fixed;
@@ -19,12 +23,9 @@ header{
     justify-content: space-between;
     align-items: center;
     z-index: 100 ;
+    transition: .6s ease-in-out;
 }
-header {
-  
-   
-    transition: background-color 0.3s ease; 
-}
+/*  */
 
 header:hover {
     background-color: #cd0101;
@@ -111,7 +112,7 @@ span.text{
     line-height: 0;
 }
 section:nth-child(odd) {
-    background: #323946;
+    /* background: #323946; */
 
 }
 
@@ -159,6 +160,7 @@ section:nth-child(odd) {
 
 .dropdown-content a:hover {
     background-color: rgb(236, 8, 8); /* Background color of submenu items on hover */
+    color: #fff;
 }
 
 .dropdown:hover .dropdown-content {
@@ -172,10 +174,11 @@ section:nth-child(odd) {
     font-size: 12px;
     display: flex;
     align-items: center; /* Align text and icon vertically */
+    transition: .6s ease-in-out;
 }
 
 #sidemenu li a:hover {
-    color: royalblue; /* Text color of menu items on hover */
+    color: ivory; /* Text color of menu items on hover */
 }
 
 /* Styling for the icons */
@@ -239,11 +242,14 @@ section:nth-child(odd) {
 /* about*/
 section .about{
     background: white;
+    border: 1px dotted red;
     
 }
 #about{
-    padding: 80px 0;
+    padding: 60px;
     color: #000000;
+    /* border: 1px solid red; */
+    
     
 
 }
@@ -261,6 +267,7 @@ section .about{
 }
 .aboutcol2{
     flex-basis: 60%;
+    border: 1px solid purple;
 }
 .subtitle{
     font-size: 60px;
@@ -331,14 +338,17 @@ font-size: 10px;
 }
 
 .servicelist {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    align-items: center;
+    justify-content: center;
     grid-gap: 20px; /* Added gap between grid items */
     margin-top: 50px;
 }
 
 .servicelist div {
     background: #000000;
+    height: 250px;
+    width: 350px;
     padding: 40px;
     font-size: 13px;
     font-weight: 300;
@@ -363,7 +373,9 @@ font-size: 10px;
     color: #fff;
     font-size: 12px; /* Adjusted font size */
     margin-top: 20px;
-    display: inline-block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .servicelist div:hover {
@@ -376,8 +388,12 @@ font-size: 10px;
 
 .contaiiiner {
     display: flex; /* Changed to flexbox */
-    flex-direction: column; /* Added to align items vertically */
+    flex-direction: column; /*Added to align items vertically*/
     align-items: center; /* Added to center items horizontally */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid blue;
+    margin: 0 auto;
 }
 
 .sub-title {
@@ -390,10 +406,15 @@ font-size: 10px;
     gap: 20px; /* Added gap between items */
     justify-content: center; /* Added to center items horizontally */
     margin-top: 50px;
+    color: #fff;
 }
 
 .servicelist div {
-    background: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background: #000;
     padding: 40px;
     font-size: 13px;
     font-weight: 300;
@@ -415,15 +436,30 @@ font-size: 10px;
 
 .servicelist div a {
     text-decoration: none;
-    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 8px;
+    /* color: #fff; */
     font-size: 12px; /* Adjusted font size */
     margin-top: 20px;
     display: inline-block;
+    transition: .6s ease-in-out;
+}
+
+.servicelist i {
+    font-size: 1.5rem;
 }
 
 .servicelist div:hover {
     background: #ff004f;
-    transform: translateX(-10px);
+    transform: scaleX(1.01);
+    color: #010101;
+}
+
+.servicelist a:hover {
+    background-color: #fff;
+    color: #000;
+
 }
 
 /* news */
@@ -617,7 +653,7 @@ h1 .wsub-title{
     transform: translateY(-3px);
 }
 #news {
-    background-color: black;
+    /* background-color: black; */
     color: white;
 }
 
@@ -941,3 +977,22 @@ footer .contaiiner .sec p{
         grid-template-columns: repeat(1,1fr);
     }
 } */
+.counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.counter-container{
+    width: 50%;
+    height: 28vm;
+    border: 1px solid orange;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 1em 0;
+    position: relative;
+    font-size: 16px;
+    border-radius: 0.5em;
+    background-color: #21242b;
+    border-bottom: 10px solid #18f98f;
+}
