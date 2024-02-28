@@ -1,4 +1,4 @@
-*{
+/* *{
     margin: 0;
     padding: 0;
 }
@@ -193,4 +193,4 @@ footer .contaiiner .sec p{
     footer .contaiiner{
         grid-template-columns: repeat(1,1fr);
     }
-}
+} */
